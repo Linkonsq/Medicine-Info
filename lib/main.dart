@@ -8,15 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-//      theme: ThemeData.dark().copyWith(
-//        textTheme: TextTheme(
-//          body1: TextStyle(color: Colors.black54),
-//        ),
-//      ),
-      initialRoute: InfoScreen.id,
-      routes: {
-        InfoScreen.id: (context) => InfoScreen(),
-      },
+      home: InfoScreen(),
     );
   }
 }
