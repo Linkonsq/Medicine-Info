@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medicine/providers/medicines.dart';
-import 'package:medicine/screens/info_screen.dart';
+import 'package:medicine/screens/edit_medicine_screen.dart';
+import 'package:medicine/screens/medicines_screen.dart';
 import 'package:medicine/screens/user_medicines_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -17,9 +18,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: InfoScreen(),
+        home: MedicinesScreen(),
         routes: {
           UserMedicinesScreen.routeName: (ctx) => UserMedicinesScreen(),
+          EditMedicineScreen.routeName: (ctx) => EditMedicineScreen(),
         },
       ),
     );

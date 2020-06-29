@@ -5,14 +5,14 @@ import 'package:medicine/providers/medicines.dart';
 import 'package:medicine/widgets/app_drawer.dart';
 import 'package:provider/provider.dart';
 
-class InfoScreen extends StatefulWidget {
+class MedicinesScreen extends StatefulWidget {
   static String id = 'info_screen';
 
   @override
-  _InfoScreenState createState() => _InfoScreenState();
+  _MedicinesScreenState createState() => _MedicinesScreenState();
 }
 
-class _InfoScreenState extends State<InfoScreen> {
+class _MedicinesScreenState extends State<MedicinesScreen> {
   DataTable dataBody(List<Medicine> medicines) {
     return DataTable(
       columns: [

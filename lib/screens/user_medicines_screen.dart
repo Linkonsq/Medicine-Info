@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medicine/providers/medicines.dart';
+import 'package:medicine/screens/edit_medicine_screen.dart';
 import 'package:medicine/widgets/app_drawer.dart';
 import 'package:medicine/widgets/user_medicine_item.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,7 @@ class UserMedicinesScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.add),
             onPressed: () {
-              //Navigator.of(context).pushNamed(EditProductScreen.routeName);
+              Navigator.of(context).pushNamed(EditMedicineScreen.routeName);
             },
           )
         ],

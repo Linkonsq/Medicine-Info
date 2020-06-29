@@ -64,8 +64,13 @@ class Medicines with ChangeNotifier {
     return [..._items];
   }
 
-  void addMedicine() {
-    //_items.add(value);
+  void addMedicine(Medicine medicine) {
+    final newMedicine = Medicine(
+      id: DateTime.now().toString(),
+      title: medicine.title,
+      quantity: medicine.quantity,
+    );
+    _items.add(newMedicine);
     notifyListeners();
   }
 
