@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medicine/providers/medicine.dart';
 import 'package:medicine/providers/medicines.dart';
+import 'package:medicine/widgets/app_drawer.dart';
 import 'package:provider/provider.dart';
 
 class InfoScreen extends StatefulWidget {
@@ -67,8 +68,8 @@ class _InfoScreenState extends State<InfoScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Medicine Info'),
-        backgroundColor: Colors.lightBlueAccent,
       ),
+      drawer: AppDrawer(),
       body: Column(
         children: <Widget>[
           Center(
