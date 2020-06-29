@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:medicine/dummy_data.dart';
+import 'package:medicine/providers/medicine.dart';
+import 'package:medicine/providers/medicines.dart';
+import 'package:provider/provider.dart';
 
 class InfoScreen extends StatefulWidget {
   static String id = 'info_screen';
@@ -10,7 +12,7 @@ class InfoScreen extends StatefulWidget {
 }
 
 class _InfoScreenState extends State<InfoScreen> {
-  DataTable dataBody() {
+  DataTable dataBody(List<Medicine> medicines) {
     return DataTable(
       columns: [
         DataColumn(
@@ -29,7 +31,7 @@ class _InfoScreenState extends State<InfoScreen> {
           tooltip: 'This is Action',
         ),
       ],
-      rows: DUMMY_MEDICINES
+      rows: medicines //DUMMY_MEDICINES
           .map(
             (medicine) => DataRow(
               cells: [
@@ -55,6 +57,9 @@ class _InfoScreenState extends State<InfoScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final medicinesData = Provider.of<Medicines>(context);
+    final medicines = medicinesData.items;
+    print(medicines.runtimeType);
     return Scaffold(
       appBar: AppBar(
         title: Text('Medicine Info'),
@@ -63,7 +68,7 @@ class _InfoScreenState extends State<InfoScreen> {
       body: Column(
         children: <Widget>[
           Center(
-            child: dataBody(),
+            child: dataBody(medicines),
           )
         ],
       ),
