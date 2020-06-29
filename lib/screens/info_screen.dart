@@ -67,7 +67,7 @@ class _InfoScreenState extends State<InfoScreen> {
     final medicines = medicinesData.items;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Medicine Info'),
+        title: Text('Medicines'),
       ),
       drawer: AppDrawer(),
       body: Column(

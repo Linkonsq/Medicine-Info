@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicine/screens/user_medicines_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -23,8 +24,8 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.edit),
             title: Text('Manage Medicines'),
             onTap: () {
-              //Navigator.of(context)
-              //.pushReplacementNamed(OrdersScreen.routeName);
+              Navigator.of(context)
+                  .pushReplacementNamed(UserMedicinesScreen.routeName);
             },
           ),
         ],
