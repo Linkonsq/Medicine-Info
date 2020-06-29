@@ -31,7 +31,7 @@ class _InfoScreenState extends State<InfoScreen> {
           tooltip: 'This is Action',
         ),
       ],
-      rows: medicines //DUMMY_MEDICINES
+      rows: medicines
           .map(
             (medicine) => DataRow(
               cells: [
@@ -42,10 +42,15 @@ class _InfoScreenState extends State<InfoScreen> {
                   Text(medicine.quantity.toString()),
                 ),
                 DataCell(
-                  InkWell(
-                    child: Container(
-                      child: Text('Buy'),
+                  FlatButton(
+                    child: Text(
+                      'Buy',
+                      style: TextStyle(color: Colors.black54),
                     ),
+                    onPressed: () {
+                      Provider.of<Medicines>(context, listen: false)
+                          .decreaseMedicine(medicine.id);
+                    },
                   ),
                 ),
               ],
@@ -59,7 +64,6 @@ class _InfoScreenState extends State<InfoScreen> {
   Widget build(BuildContext context) {
     final medicinesData = Provider.of<Medicines>(context);
     final medicines = medicinesData.items;
-    print(medicines.runtimeType);
     return Scaffold(
       appBar: AppBar(
         title: Text('Medicine Info'),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Medicine with ChangeNotifier {
   final String id;
   final String title;
-  final int quantity;
+  int quantity;
 
   Medicine({
     @required this.id,

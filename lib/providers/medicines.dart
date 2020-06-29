@@ -68,4 +68,12 @@ class Medicines with ChangeNotifier {
     //_items.add(value);
     notifyListeners();
   }
+
+  void decreaseMedicine(String id) {
+    final medIndex = _items.indexWhere((med) => med.id == id);
+    if (medIndex >= 0) {
+      _items[medIndex].quantity--;
+      notifyListeners();
+    }
+  }
 }
