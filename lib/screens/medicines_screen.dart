@@ -70,11 +70,15 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
         title: Text('Medicines'),
       ),
       drawer: AppDrawer(),
-      body: Column(
+      body: ListView(
         children: <Widget>[
-          Center(
-            child: dataBody(medicines),
-          )
+          Column(
+            children: <Widget>[
+              Center(
+                child: dataBody(medicines),
+              ),
+            ],
+          ),
         ],
       ),
     );
